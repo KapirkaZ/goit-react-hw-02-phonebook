@@ -26,17 +26,18 @@ export default class ContactForm extends Component {
     return (
       <form className={styles.TaskEditor} onSubmit={this.handleSubmit}>
         <label className={styles.TaskEditor_label}>
-          Name
+          Name:
           <input
             className={styles.TaskEditor_input}
             type="text"
             name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             value={this.state.name}
             onChange={this.handleChange}
           />
         </label>
         <label className={styles.TaskEditor_label}>
-          Number
+          Number:
           <input
             className={styles.TaskEditor_input}
             type="text"
