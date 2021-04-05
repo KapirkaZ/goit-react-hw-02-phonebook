@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import ContactList from "./components/ContactList/ContactList";
 import Filter from "./components/Filter/Filter";
 import ContactForm from "./components/ContactForm/ContactForm";
+import Container from "./components/Container/Container";
 
 export default class App extends Component {
   state = {
@@ -62,11 +63,11 @@ export default class App extends Component {
     const visibleContacts = this.getVisibleContacts();
 
     return (
-      <div>
+      <Container>
         <h1>Phonebook</h1>
 
         <ContactForm onAddContact={this.addContact} />
-        <h2>Contacts</h2>
+        <h1>Contacts</h1>
         {visibleContacts.length > 1 && (
           <Filter value={filter} onChangeFilter={this.changeFilter} />
         )}
@@ -76,7 +77,7 @@ export default class App extends Component {
             onRemoveContact={this.removeContact}
           />
         )}
-      </div>
+      </Container>
     );
   }
 }
