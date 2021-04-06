@@ -63,7 +63,7 @@ export default class App extends Component {
     const visibleContacts = this.getVisibleContacts();
 
     return (
-      <>
+      <Container>
         <h1>Phonebook</h1>
 
         <ContactForm onAddContact={this.addContact} />
@@ -77,7 +77,7 @@ export default class App extends Component {
             onRemoveContact={this.removeContact}
           />
         )}
-      </>
+      </Container>
     );
   }
 }
